@@ -9,10 +9,23 @@ const AuthRoutes = require('./Routes/auth')
 const errorHandler = require('./middlewares/error')
 
 
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({ path: "./config/.env" });
 mongoose.connect(process.env.MONGO_URL, () => {
     console.log("CONNECTED TO DATABASE")
 })
+
+console.log(process.env.NODE_ENV)
+console.log(process.env.PORT)
+console.log(process.env.MONGO_URL)
+console.log(process.env.JWT_SECRET)
+console.log(process.env.JWT_EXPIRE)
+console.log(process.env.JWT_COOKIE_EXPIRE)
+console.log(process.env.SMTP_HOST)
+console.log(process.env.SMTP_PORT)
+console.log(process.env.SMTP_EMAIL)
+console.log(process.env.SMTP_PASSWORD)
+console.log(process.env.FROM_EMAIL)
+console.log(process.env.FROM_NAME)
 const PostRoutes = require('./Routes/posts')
 
 app.use(express.json())
