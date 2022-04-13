@@ -9,7 +9,7 @@ const AuthRoutes = require('./Routes/auth')
 const errorHandler = require('./middlewares/error')
 
 
-dotenv.config({ path: "./config/.env" });
+dotenv.config();
 mongoose.connect(process.env.MONGO_URL, () => {
     console.log("CONNECTED TO DATABASE")
 })
